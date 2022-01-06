@@ -1,8 +1,8 @@
 import { HeaderLink } from "../header/HeaderLink";
 
 export function Footer() {
-	const email = "example@example.hu";
-	const phone = "+36 00 000 000";
+	const email = "sales@starnetwork.hu";
+	const phone = "+36  20 210 99 29";
 	return (
 		<footer className="flex flex-col justify-center items-center p-8 w-full font-noto-sans text-white bg-gray-900">
 			<ul className="flex flex-row gap-4 mb-6">
@@ -30,11 +30,14 @@ export function Footer() {
 					a Stúdiójukban
 				</a>
 			</p>
-			{/* <SocialPanel classname="text-2xl" /> */}
-			<p className="text-sm">{email}</p>
-			<p className="text-sm">{phone}</p>
+			<p className="text-sm">
+				<a href={`mailto:${email}`}>{email}</a>
+			</p>
+			<p className="text-sm">
+				<a href={`tel:${phone}`}>{phone}</a>
+			</p>
 			<p className="text-sm font-light">
-				Creator Marketing Kft. © 2013-{new Date().getFullYear()}
+				Creator Marketing Kft. © {new Date().getFullYear()}
 			</p>
 		</footer>
 	);
