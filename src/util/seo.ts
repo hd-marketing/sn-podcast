@@ -5,15 +5,22 @@ import type { IEpisodeFields } from "@/@types/generated/contentful";
 import { generateSlug } from "./slug";
 
 const DOMAIN = process.env.NEXT_DOMAIN;
+const SLICE_AFTER = 140;
 
 export const generateStructuredEpisodeData = (e: IEpisodeFields) => {
+	const plainDescription = documentToPlainTextString(e.description);
+	const description = plainDescription.slice(
+		0,
+		SLICE_AFTER +
+			plainDescription.slice(SLICE_AFTER, SLICE_AFTER + 20).indexOf(" "),
+	);
 	return {
 		"@context": "https://schema.org/",
 		"@type": "PodcastEpisode",
 		url: `https://${DOMAIN}/epizodok/${generateSlug(e.title)}`,
 		name: e.title,
 		datePublished: e.releaseDate,
-		description: e.description,
+		description,
 		thumbnailUrl: `https${e.cover?.fields.file.url}`,
 		partOfSeries: {
 			"@type": "PodcastSeries",
@@ -23,7 +30,6 @@ export const generateStructuredEpisodeData = (e: IEpisodeFields) => {
 	};
 };
 
-const SLICE_AFTER = 140;
 const domain = process.env.NEXT_DOMAIN ?? "influenceairpodcast.hu";
 
 export const generateEpisodeSocialPreview = (

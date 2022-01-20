@@ -35,9 +35,6 @@ export interface IEpisodeFields {
 	/** guestName */
 	guestName: string;
 
-	/** shortDescription */
-	shortDescription: string;
-
 	/** description */
 	description: Document;
 
