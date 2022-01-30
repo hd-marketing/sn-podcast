@@ -1,6 +1,7 @@
 import { MenuIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { Router } from "next/router";
 import { useState } from "react";
@@ -16,9 +17,12 @@ export function Header() {
 
 	return (
 		<>
-			<nav className="flex z-40 justify-between items-center py-6 px-8 font-noto-sans text-white bg-gradient-to-r from-iair-darkblue to-iair-lightblue">
+			<nav className="flex z-40 justify-between items-center py-2 px-8 font-noto-sans text-white bg-gradient-to-r from-iair-darkblue to-iair-lightblue">
+				<div className="w-8" />
 				<Link href="/" passHref>
-					<h1 className="text-xl font-bold cursor-pointer">influenceAir</h1>
+					<div className="relative w-16 h-16">
+						<Image src="/logo_white.svg" layout="fill" />
+					</div>
 				</Link>
 				<MenuIcon
 					className=" w-8 cursor-pointer select-none"
