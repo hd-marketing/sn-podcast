@@ -33,7 +33,7 @@
 		"contentful-management": "^7.47.1",
 		"focus-visible": "^5.2.0",
 		"framer-motion": "^5.5.4",
-		"next": "^12.0.7",
+		"next": "^12.0.9",
 		"next-compose-plugins": "^2.2.1",
 		"postcss-import": "^14.0.2",
 		"postcss-preset-env": "^7.0.1",
