@@ -40,6 +40,6 @@ export const getStaticProps = async () => {
 		props: {
 			aboutUs: await getAboutUs(),
 		},
-		revalidate: 60 * 60 * 1,
+		revalidate: 60 * 5,
 	};
 };

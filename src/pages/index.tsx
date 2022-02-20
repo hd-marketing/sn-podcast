@@ -36,6 +36,6 @@ export const getStaticProps = async () => {
 		props: {
 			episodes: await getEpisodes(),
 		},
-		revalidate: 60 * 60 * 1,
+		revalidate: 60 * 5,
 	};
 };
