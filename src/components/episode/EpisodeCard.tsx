@@ -26,7 +26,11 @@ export function EpisodeCard({
 				<div className="flex flex-row gap-2 items-center ">
 					<div className="relative flex-shrink-0 w-20 h-20">
 						<Image
-							src={`https:${cover?.fields.file.url}`}
+							src={
+								cover?.fields.file.url
+									? `https:${cover?.fields.file.url}`
+									: "/cover.jpg"
+							}
 							layout="fill"
 							objectFit="cover"
 							className="rounded-lg"

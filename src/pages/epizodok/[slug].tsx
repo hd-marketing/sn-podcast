@@ -61,11 +61,7 @@ export default function SelectedEpisodePage({
 				<div className="relative mb-8 w-full h-64 lg:h-80 -z-10">
 					<Image
 						priority
-						src={
-							cover
-								? `https:${cover.fields.file.url}`
-								: "https://placekitten.com/500/500"
-						}
+						src={cover ? `https:${cover.fields.file.url}` : "/cover.jpg"}
 						layout="fill"
 						objectFit="cover"
 						className="rounded-lg"
