@@ -29,7 +29,7 @@ export function EpisodeCard({
 							src={
 								cover?.fields.file.url
 									? `https:${cover?.fields.file.url}`
-									: "/cover.jpg"
+									: "/cover-min.jpg"
 							}
 							layout="fill"
 							objectFit="cover"
